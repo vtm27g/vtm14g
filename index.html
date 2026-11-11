@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="fr" manifest="cache.appcache">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ViralTech Market — VTM14</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="vtm-entry">
+<header id="brand"><b>VIRALTECH MARKET</b><span class="brand-tag">GAMING • TECHNOLOGIE • DIGITAL</span></header>
+<main class="activation-shell">
+  <section class="activation-card" id="activationCard">
+    <div class="vtm-mark">VTM14 <span>ViralTech Market</span></div>
+    <h1>Activation de votre licence</h1>
+    <p class="intro">Entrez votre code d’activation pour démarrer automatiquement.</p>
+    <form id="licenseForm">
+      <label for="licenseCode">Code de licence (10 chiffres)</label>
+      <input id="licenseCode" inputmode="numeric" autocomplete="off" maxlength="10" pattern="[0-9]{10}" placeholder="Ex. 1234567890" required>
+      <button id="activateBtn" type="submit">Vérifier et démarrer</button>
+    </form>
+    <p id="licenseStatus" role="status" aria-live="polite">La licence est vérifiée en ligne avant tout chargement.</p>
+    <a class="contact" href="https://wa.me/22677445995?text=Bonjour%20ViralTech%20Market%2C%20je%20souhaite%20obtenir%20une%20licence%20VTM14" target="_blank" rel="noopener">Code non disponible ? Contacter ViralTech Market<br><strong>WhatsApp : 77 44 59 95</strong></a>
+  </section>
+  <section class="marketing" aria-label="Services ViralTech Market">
+    <strong id="promoTitle">ViralTech Market • Gaming & solutions numériques</strong>
+    <span id="promoText">Consoles PS3, PS4 et PS5 • Manettes • Casques • Accessoires</span>
+  </section>
+</main>
+<footer class="byline">VIRALTECH MARKET • Des solutions pensées pour vous simplifier la vie.</footer>
+<script src="launch.js"></script>
+<script>
+(function () {
+  if (!("serviceWorker" in navigator)) return;
+  window.addEventListener("load", function () {
+    navigator.serviceWorker.register("./service-worker.js").catch(function () {
+      /* AppCache remains the fallback for compatible legacy console browsers. */
+    });
+  });
+})();
+</script>
+</body></html>
